@@ -1,0 +1,257 @@
+/* ==========================================================================
+   EduMentor AI — premium qatlam
+   style.css'dan KEYIN ulanadi. Asosiy dizayn o'zgarmaydi, faqat takomillashtiriladi.
+   Tuzilishi: 1 Tokenlar · 2 Asos · 3 Sarlavha · 4 Komponentlar · 5 Landing
+              6 Onboarding · 7 Dashboard · 8 Animatsiya · 9 Breakpoint'lar
+   ========================================================================== */
+
+/* 1. TOKENLAR ------------------------------------------------------------- */
+:root {
+  --font-body: "DM Sans", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-head: "Manrope", "DM Sans", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --ease: cubic-bezier(.22, .8, .3, 1);
+  --ring: 0 0 0 3px rgba(71, 124, 245, .32);
+  --ok: #1f9d6b;
+  --warn: #b7791f;
+  --safe-t: env(safe-area-inset-top, 0px);
+  --safe-b: env(safe-area-inset-bottom, 0px);
+  --safe-l: env(safe-area-inset-left, 0px);
+  --safe-r: env(safe-area-inset-right, 0px);
+}
+
+/* 2. ASOS ------------------------------------------------------------------ */
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; scroll-padding-top: 92px; }
+body {
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-x: clip;
+  -webkit-tap-highlight-color: transparent;
+  padding-left: var(--safe-l);
+  padding-right: var(--safe-r);
+}
+/* :root — specificity oshirish uchun: asl qoidalardagi zaxirasiz `Manrope` ni bekor qiladi */
+:root :is(h1, h2, h3, .brand, .brand-mark, .mini-brand, .preview-stats b, .step > b) { font-family: var(--font-head); }
+h1, h2 { text-wrap: balance; }
+:focus-visible { outline: 2px solid var(--blue); outline-offset: 3px; border-radius: 6px; }
+::selection { background: #cfe0ff; }
+
+.skip-link {
+  position: absolute; left: 12px; top: -64px; z-index: 30;
+  background: var(--navy); color: #fff; padding: 11px 16px;
+  border-radius: 10px; font-size: 13px; font-weight: 700;
+}
+.skip-link:focus { top: calc(10px + var(--safe-t)); }
+
+/* 3. SARLAVHA -------------------------------------------------------------- */
+.site-header {
+  position: sticky; top: 0;
+  height: calc(82px + var(--safe-t));
+  padding-top: var(--safe-t);
+}
+.site-header::before {
+  content: ""; position: absolute; inset: 0 calc(50% - 50vw); z-index: -1;
+  background: rgba(255, 255, 255, .86);
+  -webkit-backdrop-filter: saturate(1.6) blur(14px); backdrop-filter: saturate(1.6) blur(14px);
+  border-bottom: 1px solid transparent; opacity: 0;
+  transition: opacity .3s var(--ease), border-color .3s;
+}
+.site-header.is-scrolled::before { opacity: 1; border-bottom-color: var(--line); }
+.brand { white-space: nowrap; }
+.nav-links { font-size: 14px; }
+.nav-links a { padding: 8px 2px; transition: color .2s; }
+.back-link { font-size: 14px; padding: 10px 0; }
+
+/* 4. KOMPONENTLAR ---------------------------------------------------------- */
+.button {
+  min-height: 46px; font-family: var(--font-body);
+  transition: transform .25s var(--ease), box-shadow .25s var(--ease), background .25s, border-color .25s;
+}
+.button-small { min-height: 42px; font-size: 14px; }
+.button:active { transform: translateY(0) scale(.98); }
+.button-primary:hover { box-shadow: 0 14px 28px #477cf547; }
+.button-outline:hover { border-color: #b9ccf0; }
+.eyebrow { font-size: 11px; letter-spacing: 1.6px; }
+.soon-pill, .status-pill {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: 11px; font-weight: 800; letter-spacing: .4px;
+  color: var(--warn); background: #fff4d9; border-radius: 20px; padding: 5px 10px;
+}
+.soon-pill { position: absolute; top: 18px; right: 16px; z-index: 2; }
+
+/* 5. LANDING --------------------------------------------------------------- */
+.hero-description { font-size: 17px; line-height: 1.75; }
+.text-link { font-size: 14px; }
+.hero-proof { font-size: 12px; }
+.glow { width: min(390px, 92%); height: auto; aspect-ratio: 1; animation: drift 9s ease-in-out infinite alternate; }
+.floating-note { animation: bob 6s ease-in-out infinite; }
+.online-tag { font-size: 10px; }
+.card-number, .preview-greeting small { font-size: 10px; }
+.preview-greeting p, .preview-task p { font-size: 11px; }
+.preview-task b, .bar-heading b, .floating-note b { font-size: 12px; }
+.preview-stats span, .preview-stats small, .bar-heading span, .days, .floating-note small { font-size: 10px; }
+.trust-strip { font-size: 10px; }
+.section-heading p, .how-inner > div > p, .closing p { font-size: 15px; }
+.feature-card { transition: transform .3s var(--ease), box-shadow .3s var(--ease), border-color .3s; }
+.feature-card:hover { border-color: #cfdcf5; }
+.feature-card p { font-size: 13px; line-height: 1.7; }
+.feature-card > a { font-size: 12px; display: inline-block; padding: 6px 0; }
+.step > b { min-width: 42px; text-align: center; flex: none; }
+.step h3 { font-size: 16px; }
+.step p { font-size: 13px; }
+.closing { width: min(1184px, calc(100% - 56px)); flex-wrap: wrap; gap: 24px; }
+.footer { font-size: 12px; gap: 14px; flex-wrap: wrap; }
+
+/* 6. ONBOARDING ------------------------------------------------------------ */
+@supports (height: 100dvh) {
+  .onboarding-page, .dashboard-page { min-height: 100dvh; }
+  .onboarding-wrap { min-height: calc(100dvh - 82px); }
+}
+.onboarding-intro { font-size: 14px; }
+.onboarding-card form > label, .role-label { font-size: 13px; }
+.onboarding-card input[type=text] {
+  font-size: 16px; /* iOS Safari fokusda zoom qilmasligi uchun */
+  min-height: 50px; transition: border-color .2s, box-shadow .2s;
+}
+.onboarding-card input[aria-invalid="true"] { border-color: #d34b4b; box-shadow: 0 0 0 3px #d34b4b18; }
+.role-option { min-height: 104px; transition: border-color .2s, box-shadow .2s, background .2s, transform .2s var(--ease); }
+.role-option:hover { border-color: #c7d6f3; transform: translateY(-1px); }
+.role-option:has(input:focus-visible) { box-shadow: var(--ring); }
+.role-option b { font-size: 14px; }
+.role-option small { font-size: 11px; }
+.role-option input { width: 18px; height: 18px; }
+.privacy-note { font-size: 11px; }
+.form-error { font-size: 13px; margin: 12px 0 0; }
+.form-error:empty { display: none; }
+.submit-button:disabled { opacity: .65; cursor: wait; transform: none; }
+
+/* 7. DASHBOARD ------------------------------------------------------------- */
+.dashboard-shell { max-width: 1240px; margin-top: 40px; margin-bottom: calc(55px + var(--safe-b)); }
+.dashboard-welcome p { font-size: 14px; max-width: 620px; line-height: 1.7; }
+.dashboard-welcome { gap: 20px; }
+.dashboard-welcome .button { white-space: nowrap; flex: none; }
+.user-chip { gap: 10px; min-width: 0; }
+.user-chip #headerName { max-width: 160px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.chip-btn {
+  min-height: 40px; padding: 0 14px; border: 1px solid #dce5f1; border-radius: 10px;
+  background: #fff; color: var(--navy); font-size: 13px; font-weight: 700; cursor: pointer;
+  transition: border-color .2s, background .2s;
+}
+.chip-btn:hover { border-color: #b9ccf0; background: #f6f9ff; }
+
+.dashboard-grid { grid-template-columns: repeat(2, 1fr); }
+.tool-card {
+  display: flex; flex-direction: column; position: relative; width: 100%;
+  text-align: left; font: inherit; color: inherit; cursor: default;
+  transition: transform .3s var(--ease), box-shadow .3s var(--ease), border-color .3s;
+}
+.tool-card:hover { border-color: #cfdcf5; }
+.tool-card:active { transform: translateY(-1px); }
+.tool-card small { font-size: 10px; }
+.tool-card h2 { font-family: var(--font-head); font-size: 19px; }
+.tool-card p { font-size: 14px; flex: 1; margin: 0; }
+.tool-link { margin-top: 22px; align-items: center; }
+
+.status-panel {
+  margin-top: 22px; background: #fff; border: 1px solid #e8edf4; border-radius: 15px; padding: 26px;
+  display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: 28px; align-items: start;
+}
+.status-panel h2 { font: 800 19px var(--font-head); color: var(--navy); margin: 10px 0 8px; }
+.status-panel > div:first-child p { font-size: 13px; color: var(--muted); line-height: 1.7; margin: 0; }
+.status-list { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.status-item {
+  display: flex; gap: 11px; align-items: flex-start; padding: 13px 14px;
+  background: #f7f9fc; border-radius: 12px; min-width: 0;
+}
+.status-dot { width: 9px; height: 9px; border-radius: 50%; margin-top: 5px; flex: none; background: #e0a93b; box-shadow: 0 0 0 4px #e0a93b22; }
+.status-item.is-ok .status-dot { background: var(--ok); box-shadow: 0 0 0 4px #1f9d6b22; }
+.status-item b { display: block; font-size: 13px; color: var(--navy); }
+.status-item small { display: block; font-size: 12px; color: var(--muted); margin-top: 3px; overflow-wrap: anywhere; }
+
+.toast {
+  position: fixed; left: 50%; bottom: calc(24px + var(--safe-b)); z-index: 50;
+  max-width: calc(100% - 32px); padding: 13px 18px; border-radius: 12px; text-align: center;
+  background: var(--navy); color: #fff; font-size: 13px; font-weight: 600; line-height: 1.5;
+  box-shadow: var(--shadow); opacity: 0; pointer-events: none;
+  transform: translate(-50%, 16px); transition: opacity .3s var(--ease), transform .3s var(--ease);
+}
+.toast.show { opacity: 1; transform: translate(-50%, 0); }
+
+/* 8. ANIMATSIYA ------------------------------------------------------------ */
+@keyframes drift { to { transform: translate(14px, -10px) scale(1.04); } }
+@keyframes bob { 50% { transform: translateY(-7px); } }
+.js .reveal { opacity: 0; transform: translateY(18px); transition: opacity .7s var(--ease), transform .7s var(--ease); transition-delay: var(--d, 0ms); }
+.js .reveal.in { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) {
+  .glow, .floating-note { animation: none !important; }
+  .js .reveal { opacity: 1; transform: none; }
+}
+
+/* 9. BREAKPOINT'LAR (kattadan kichikka) ------------------------------------ */
+@media (min-width: 1100px) {
+  .dashboard-grid { grid-template-columns: repeat(4, 1fr); }
+}
+@media (min-width: 1440px) {
+  .site-header { max-width: 1336px; }
+  .section-shell, .footer { max-width: 1280px; }
+  .closing { width: min(1280px, calc(100% - 56px)); }
+  .dashboard-shell { max-width: 1336px; }
+  .hero h1 { font-size: 68px; }
+}
+
+/* Planshet va kichik laptop */
+@media (max-width: 1000px) {
+  .status-panel { grid-template-columns: 1fr; gap: 20px; }
+}
+@media (max-width: 880px) {
+  .hero { grid-template-columns: 1fr; min-height: 0; gap: 36px; padding-top: 40px; padding-bottom: 60px; }
+  .hero-copy { max-width: 640px; }
+  .hero h1 { font-size: clamp(40px, 7vw, 56px); }
+  .hero-visual { min-height: 440px; }
+  .how-inner { grid-template-columns: 1fr; gap: 40px; }
+  .onboarding-wrap { grid-template-columns: 1fr; max-width: 620px; }
+  .onboarding-aside { min-height: 260px; }
+}
+
+/* Telefon */
+@media (max-width: 650px) {
+  .site-header { height: calc(70px + var(--safe-t)); padding-left: 20px; padding-right: 20px; }
+  .nav-links { top: calc(62px + var(--safe-t)); gap: 6px; }
+  .nav-links a { padding: 12px 6px; font-size: 15px; }
+  .menu-toggle { display: grid; place-items: center; width: 44px; height: 44px; margin-right: -8px; border-radius: 12px; }
+  .menu-toggle:active { background: #f0f4fb; }
+
+  .hero { padding-top: 32px; padding-bottom: 44px; gap: 28px; }
+  .hero h1 { font-size: clamp(38px, 10.5vw, 46px); }
+  .hero-description { font-size: 16px; }
+  .hero-actions .button { width: 100%; }
+  .hero-visual { min-height: 0; padding-bottom: 22px; }
+  .floating-note { right: 6px; bottom: 0; }
+
+  .feature-card p { font-size: 13px; }
+  .feature-card h3 { font-size: 16px; }
+  .closing { width: auto; margin: 48px 20px; padding: 32px 24px; }
+  .closing .button { width: 100%; }
+  .footer { padding-bottom: calc(22px + var(--safe-b)); }
+
+  .onboarding-card { padding: 28px 20px; }
+  .onboarding-aside { min-height: 0; }
+
+  .user-chip .chip-btn { min-height: 38px; padding: 0 12px; }
+  .dashboard-grid { grid-template-columns: 1fr; }
+  .status-list { grid-template-columns: 1fr; }
+  .status-panel { padding: 20px 18px; }
+  .dashboard-welcome .button { width: 100%; }
+}
+@media (max-width: 560px) {
+  .feature-grid { grid-template-columns: 1fr; }
+  .feature-card { min-height: 0; }
+  .feature-card p { min-height: 0; }
+}
+@media (max-width: 420px) {
+  .user-chip #headerName { display: none; }
+}
+@media (max-width: 370px) {
+  .hero h1 { font-size: 36px; }
+  .role-option { min-height: 0; }
+}

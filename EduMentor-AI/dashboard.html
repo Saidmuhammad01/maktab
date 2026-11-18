@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#102744">
+  <meta name="description" content="EduMentor AI — shaxsiy ish maydoni.">
+  <title>EduMentor AI — Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/enhance.css">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <script src="js/ui.js"></script>
+</head>
+<body class="dashboard-page">
+  <a class="skip-link" href="#main">Asosiy mazmunga o‘tish</a>
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="EduMentor AI bosh sahifa"><span class="brand-mark">E</span><span>EduMentor <b>AI</b></span></a>
+    <div class="user-chip">
+      <span class="user-avatar" id="avatarInitial">U</span>
+      <span id="headerName">Foydalanuvchi</span>
+      <button class="chip-btn" id="logoutBtn" type="button" title="Profilni shu qurilmadan o‘chiradi">Chiqish</button>
+    </div>
+  </header>
+
+  <main class="dashboard-shell" id="main">
+    <div class="dashboard-welcome">
+      <div>
+        <div class="eyebrow">SHAXSIY ISH MAYDONI</div>
+        <h1>Xush kelibsiz, <span id="welcomeName">Foydalanuvchi</span>! 👋</h1>
+        <p id="roleText">Siz uchun bugungi ta’lim muhiti tayyor.</p>
+      </div>
+      <a class="button button-outline" href="index.html">Bosh sahifa <span>↗</span></a>
+    </div>
+
+    <div class="dashboard-grid">
+      <button class="tool-card" type="button" data-soon="AI dars konstruktori">
+        <span class="tool-icon">✦</span><small>01 / CREATE</small>
+        <h2>AI dars konstruktori</h2>
+        <p>Dars rejasi va mashg‘ulotlar uchun g‘oyalar yarating.</p>
+        <span class="tool-link"><span class="status-pill">Tez orada</span></span>
+      </button>
+      <button class="tool-card" type="button" data-soon="Aqlli baholash">
+        <span class="tool-icon purple">◈</span><small>02 / ANALYZE</small>
+        <h2>Aqlli baholash</h2>
+        <p>O‘zlashtirish natijalari va rivojlanish dinamikasi.</p>
+        <span class="tool-link"><span class="status-pill">Tez orada</span></span>
+      </button>
+      <button class="tool-card" type="button" data-soon="AI-repetitor">
+        <span class="tool-icon mint">✎</span><small>03 / LEARN</small>
+        <h2>AI-repetitor</h2>
+        <p>Mavzularni sodda va tushunarli tarzda o‘rganing.</p>
+        <span class="tool-link"><span class="status-pill">Tez orada</span></span>
+      </button>
+      <button class="tool-card" type="button" data-soon="Interaktiv o‘yinlar">
+        <span class="tool-icon orange">▦</span><small>04 / PLAY</small>
+        <h2>Interaktiv o‘yinlar</h2>
+        <p>Viktorina va bilimni mustahkamlovchi mashqlar.</p>
+        <span class="tool-link"><span class="status-pill">Tez orada</span></span>
+      </button>
+    </div>
+
+    <section class="status-panel" aria-labelledby="statusTitle">
+      <div>
+        <div class="eyebrow">KEYINGI BOSQICH</div>
+        <h2 id="statusTitle">Platforma holati</h2>
+        <p>Bu boshlang‘ich prototip. Quyida nima ishlayotgani va nima hali ulanmagani ko‘rsatilgan.</p>
+      </div>
+      <ul class="status-list">
+        <li class="status-item is-ok"><span class="status-dot"></span><div><b>Onboarding</b><small>Ishlaydi</small></div></li>
+        <li class="status-item is-ok"><span class="status-dot"></span><div><b>Profil</b><small id="profileMeta">Shu qurilmada saqlangan</small></div></li>
+        <li class="status-item"><span class="status-dot"></span><div><b>AI modullar</b><small>Hali ulanmagan</small></div></li>
+        <li class="status-item"><span class="status-dot"></span><div><b>Backend va ma’lumotlar bazasi</b><small>Hali ulanmagan</small></div></li>
+        <li class="status-item"><span class="status-dot"></span><div><b>Haqiqiy autentifikatsiya</b><small>Hali ulanmagan</small></div></li>
+      </ul>
+    </section>
+  </main>
+  <script src="js/dashboard.js"></script>
+</body>
+</html>

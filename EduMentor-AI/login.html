@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"><meta name="theme-color" content="#102744"><meta name="description" content="EduMentor AI profilini yarating: ism va rolni tanlang.">
+  <title>EduMentor AI — Profil yaratish</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/enhance.css"><link rel="icon" href="favicon.svg" type="image/svg+xml"><script src="js/ui.js"></script>
+</head>
+<body class="onboarding-page">
+  <a class="skip-link" href="#main">Asosiy mazmunga o‘tish</a>
+  <header class="site-header"><a class="brand" href="index.html"><span class="brand-mark">E</span><span>EduMentor <b>AI</b></span></a><a class="back-link" href="index.html">← Bosh sahifa</a></header>
+  <main class="onboarding-wrap" id="main">
+    <section class="onboarding-card">
+      <div class="onboarding-symbol">✦</div>
+      <div class="eyebrow">SIZNING TA’LIM MUHITINGIZ</div>
+      <h1>Avval tanishib olaylik.</h1>
+      <p class="onboarding-intro">Ismingiz va rolingizni kiriting. EduMentor AI siz uchun shaxsiy ish maydonini tayyorlaydi.</p>
+      <form id="onboardingForm">
+        <label for="userName">Ismingiz</label>
+        <input id="userName" name="name" type="text" placeholder="Masalan, Saidmuhammad" maxlength="40" autocomplete="given-name" autocapitalize="words" aria-describedby="formError" required>
+        <div class="role-label" id="roleLabel">Platformadagi rolingiz</div>
+        <div class="role-options" role="radiogroup" aria-labelledby="roleLabel">
+          <label class="role-option"><input type="radio" name="role" value="O‘quvchi" checked><span class="role-emoji">🎓</span><b>O‘quvchi</b><small>O‘rganish va rivojlanish</small></label>
+          <label class="role-option"><input type="radio" name="role" value="O‘qituvchi"><span class="role-emoji">👩‍🏫</span><b>O‘qituvchi</b><small>Dars va sinfni boshqarish</small></label>
+        </div>
+        <button class="button button-primary submit-button" type="submit">Shaxsiy kabinetga o‘tish <span>→</span></button>
+        <p class="privacy-note">Davom etish orqali ma’lumotlaringiz ushbu qurilmada saqlanishiga rozilik bildirasiz.</p>
+        <p class="form-error" id="formError" role="alert"></p>
+      </form>
+    </section>
+    <aside class="onboarding-aside"><div class="aside-orb"></div><div class="eyebrow">EDUMENTOR AI</div><h2>Har bir o‘quvchi va o‘qituvchi uchun alohida yondashuv.</h2><p>Bir platforma. Turli imkoniyatlar. Sizga mos ta’lim tajribasi.</p><div class="aside-bottom"><span>✦</span> Aqlli ta’lim sari birinchi qadam</div></aside>
+  </main>
+  <script src="js/onboarding.js"></script>
+</body>
+</html>
